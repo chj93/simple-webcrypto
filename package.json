@@ -1,0 +1,19 @@
+{
+  "name": "simple-webcrypto",
+  "version": "0.1.0",
+  "description": "AES, RSA encryption/decryption and SHA, MD5 hashing using Web Crypto API in Node.js",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "web-crypto",
+    "crypto"
+  ],
+  "repository": "https://github.com/chj93/simple-webcrypto",
+  "author": "hyejin choi <chj942@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}
