@@ -1,4 +1,4 @@
-const crypto = require("crypto").webcrypto;
+import crypto from "crypto";
 
 export async function generateRSAKeyPair(): Promise<CryptoKeyPair> {
   return await crypto.subtle.generateKey(

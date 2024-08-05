@@ -1,4 +1,4 @@
-const crypto = require("crypto").webcrypto;
+import crypto from "crypto";
 
 export async function sha256(message: string): Promise<Uint8Array> {
   const hashBuffer = await crypto.subtle.digest(

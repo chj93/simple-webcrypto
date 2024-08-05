@@ -1,4 +1,4 @@
-const crypto = require("crypto").webcrypto;
+import crypto from "crypto";
 
 export async function aesEncrypt(
   plainText: string,
