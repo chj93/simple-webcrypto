@@ -1,13 +1,13 @@
 import crypto from "crypto";
 
-export async function sha256(message: string): Promise<Uint8Array> {
+export async function sha256(plainText: string): Promise<Uint8Array> {
   const hashBuffer = await crypto.subtle.digest(
     "SHA-256",
-    new TextEncoder().encode(message)
+    new TextEncoder().encode(plainText)
   );
   return new Uint8Array(hashBuffer);
 }
 
-export function md5(message: string): string {
-  return crypto.createHash("md5").update(message).digest("hex");
+export function md5(plainText: string): string {
+  return crypto.createHash("md5").update(plainText).digest("hex");
 }

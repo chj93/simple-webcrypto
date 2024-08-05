@@ -3,8 +3,8 @@ import * as assert from "assert";
 
 describe("Hash Functions", () => {
   it("should hash correctly with SHA-256", async () => {
-    const message = "Hello, World!";
-    const hash = await sha256(message);
+    const plainText = "Hello, World!";
+    const hash = await sha256(plainText);
     const hashHex = Buffer.from(hash).toString("hex");
 
     const expectedHash =
@@ -13,8 +13,8 @@ describe("Hash Functions", () => {
   });
 
   it("should hash correctly with MD5", () => {
-    const message = "Hello, World!";
-    const hash = md5(message);
+    const plainText = "Hello, World!";
+    const hash = md5(plainText);
 
     const expectedHash = "65a8e27d8879283831b664bd8b7f0ad4"; // "Hello, World!" MD5 Hash
     assert.strictEqual(hash, expectedHash);

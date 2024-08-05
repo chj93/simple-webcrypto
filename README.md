@@ -66,12 +66,12 @@ import {
 
 // Example SHA and MD5 usage
 (async () => {
-  const message = "Hello, World!";
+  const plainText = "Hello, World!";
 
-  const sha256Hash = await sha256(message);
+  const sha256Hash = await sha256(plainText);
   console.log("SHA-256 Hash:", Buffer.from(sha256Hash).toString("hex"));
 
-  const md5Hash = md5(message);
+  const md5Hash = md5(plainText);
   console.log("MD5 Hash:", md5Hash);
 })();
 ```
