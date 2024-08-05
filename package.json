@@ -4,7 +4,8 @@
   "description": "AES, RSA encryption/decryption and SHA, MD5 hashing using Web Crypto API in Node.js",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "mocha -r ts-node/register test/**/*.test.ts"
   },
   "keywords": [
     "web-crypto",
@@ -15,8 +16,10 @@
   "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
+    "@types/mocha": "^10.0.7",
     "@types/node": "^22.1.0",
     "mocha": "^10.7.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   }
 }
