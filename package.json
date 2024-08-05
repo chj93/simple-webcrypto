@@ -6,7 +6,10 @@
   "scripts": {
     "build": "tsc",
     "test": "mocha -r ts-node/register test/**/*.test.ts",
-    "test:coverage": "nyc yarn test"
+    "test:coverage": "nyc yarn test",
+    "example:aes": "ts-node example/aes.ts",
+    "example:res": "ts-node example/res.ts",
+    "example:hash": "ts-node example/hash.ts"
   },
   "nyc": {
     "extension": [
