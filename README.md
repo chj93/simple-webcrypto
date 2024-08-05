@@ -15,6 +15,12 @@ or
 yarn add simple-webcrypto
 ```
 
+or
+
+```bash
+pnpm add simple-webcrypto
+```
+
 ## Usage
 
 ```tsx
