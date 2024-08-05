@@ -5,7 +5,19 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "mocha -r ts-node/register test/**/*.test.ts"
+    "test": "mocha -r ts-node/register test/**/*.test.ts",
+    "test:coverage": "nyc yarn test"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "**/*.test.ts",
+      "test/**"
+    ],
+    "all": true,
+    "check-coverage": true
   },
   "keywords": [
     "web-crypto",
@@ -19,6 +31,7 @@
     "@types/mocha": "^10.0.7",
     "@types/node": "^22.1.0",
     "mocha": "^10.7.0",
+    "nyc": "^17.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   }
