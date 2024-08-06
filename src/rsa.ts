@@ -1,6 +1,8 @@
 import crypto from "crypto";
+import { getCrypto } from "../utils";
 
 export async function generateRSAKeyPair(): Promise<CryptoKeyPair> {
+  const crypto = await getCrypto();
   return await crypto.subtle.generateKey(
     {
       name: "RSA-OAEP",

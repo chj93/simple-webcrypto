@@ -1,9 +1,10 @@
-import crypto from "crypto";
+import { getCrypto } from "../utils";
 
 export async function aesEncrypt(
   message: string,
   key: Uint8Array
 ): Promise<{ iv: Uint8Array; encrypted: Uint8Array }> {
+  const crypto = await getCrypto();
   const iv = crypto.getRandomValues(new Uint8Array(12));
   const encodedKey = await crypto.subtle.importKey(
     "raw",
