@@ -38,9 +38,9 @@ import {
 (async () => {
   // AES key should be 128, 192, or 256 bits (16, 24, or 32 bytes)
   const key = crypto.getRandomValues(new Uint8Array(16));
-  const plainText = "Hello, World!";
+  const message = "Hello, World!";
 
-  const { iv, encrypted } = await aesEncrypt(plainText, key);
+  const { iv, encrypted } = await aesEncrypt(message, key);
   const decryptedText = await aesDecrypt(encrypted, key, iv);
 
   console.log("Decrypted Text:", decryptedText);
@@ -50,7 +50,7 @@ import {
 (async () => {
   const { publicKey, privateKey } = await generateRSAKeyPair();
 
-  const plainText = "Hello, World!";
+  const message = "Hello, World!";
   const publicKeyBuffer = new Uint8Array(
     await crypto.subtle.exportKey("spki", publicKey)
   );
@@ -58,7 +58,7 @@ import {
     await crypto.subtle.exportKey("pkcs8", privateKey)
   );
 
-  const encrypted = await rsaEncrypt(plainText, publicKeyBuffer);
+  const encrypted = await rsaEncrypt(message, publicKeyBuffer);
   const decryptedText = await rsaDecrypt(encrypted, privateKeyBuffer);
 
   console.log("Decrypted Text:", decryptedText);
@@ -66,12 +66,12 @@ import {
 
 // Example SHA and MD5 usage
 (async () => {
-  const plainText = "Hello, World!";
+  const message = "Hello, World!";
 
-  const sha256Hash = await sha256(plainText);
+  const sha256Hash = await sha256(message);
   console.log("SHA-256 Hash:", Buffer.from(sha256Hash).toString("hex"));
 
-  const md5Hash = md5(plainText);
+  const md5Hash = md5(message);
   console.log("MD5 Hash:", md5Hash);
 })();
 ```

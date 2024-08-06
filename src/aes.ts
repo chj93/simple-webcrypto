@@ -1,7 +1,7 @@
 import crypto from "crypto";
 
 export async function aesEncrypt(
-  plainText: string,
+  message: string,
   key: Uint8Array
 ): Promise<{ iv: Uint8Array; encrypted: Uint8Array }> {
   const iv = crypto.getRandomValues(new Uint8Array(12));
@@ -18,7 +18,7 @@ export async function aesEncrypt(
       iv: iv,
     },
     encodedKey,
-    new TextEncoder().encode(plainText)
+    new TextEncoder().encode(message)
   );
   return {
     iv: iv,

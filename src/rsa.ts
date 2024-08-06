@@ -14,7 +14,7 @@ export async function generateRSAKeyPair(): Promise<CryptoKeyPair> {
 }
 
 export async function rsaEncrypt(
-  plainText: string,
+  message: string,
   publicKey: Uint8Array
 ): Promise<Uint8Array> {
   const encodedPublicKey = await crypto.subtle.importKey(
@@ -29,7 +29,7 @@ export async function rsaEncrypt(
       name: "RSA-OAEP",
     },
     encodedPublicKey,
-    new TextEncoder().encode(plainText)
+    new TextEncoder().encode(message)
   );
   return new Uint8Array(encrypted);
 }
