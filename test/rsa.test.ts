@@ -4,7 +4,8 @@ import * as assert from "assert";
 describe("RSA Encryption and Decryption", () => {
   it("should encrypt and decrypt correctly", async () => {
     const { publicKey, privateKey } = await generateRSAKeyPair();
-    const message = "Hello, World!";
+    const message =
+      "Hello, World! こんにちは世界 你好，世界 안녕하세요 세계 🌍";
 
     const publicKeyBuffer = new Uint8Array(
       await crypto.subtle.exportKey("spki", publicKey)
