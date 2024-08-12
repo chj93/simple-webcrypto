@@ -1,8 +1,11 @@
-export async function getCrypto(): Promise<Crypto> {
+export function getCrypto(): Crypto {
   if (typeof window !== "undefined" && window.crypto) {
+    // browser
     return window.crypto;
+  } else if (typeof global !== "undefined" && global.crypto) {
+    // node.js
+    return global.crypto;
   } else {
-    const { webcrypto } = await import("crypto");
-    return webcrypto as unknown as Crypto;
+    throw new Error("Crypto API not available in this environment");
   }
 }
