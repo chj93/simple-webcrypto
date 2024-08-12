@@ -4,8 +4,8 @@ export async function aesEncrypt(
   message: string,
   key: Uint8Array
 ): Promise<{ iv: Uint8Array; encrypted: Uint8Array }> {
-  const crypto = await getCrypto();
-  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const crypto = getCrypto();
+  const iv = crypto.getRandomValues(new Uint8Array(12)); // 96비트(AES-GCM 표준) Initialization Vector 생성
   const encodedKey = await crypto.subtle.importKey(
     "raw",
     key,
