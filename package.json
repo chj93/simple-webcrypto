@@ -1,6 +1,6 @@
 {
   "name": "simple-webcrypto",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "AES, RSA encryption/decryption and SHA, MD5 hashing using Web Crypto API in Node.js",
   "main": "dist/index.js",
   "scripts": {
